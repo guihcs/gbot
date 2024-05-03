@@ -1,0 +1,270 @@
+
+
+
+
+NPotIcon < Panel
+  anchors.top: prev.bottom
+  anchors.left: parent.left
+  height: 36
+  width: 400
+  
+
+  CheckBox
+    id: enabled
+    anchors.left: parent.left
+    anchors.verticalCenter: parent.verticalCenter
+    width: 15
+    height: 15
+    margin-top: 2
+    margin-left: 3
+
+  Item
+    id: titem 
+    virtual: true
+    &selectable: false
+    &editable: false
+    anchors.top: parent.top
+    anchors.left: prev.right
+
+  Label
+    id: spellName
+    !text: tr('name')
+    width: 100
+    anchors.top: parent.top
+    anchors.left: prev.right
+
+  Label
+    id: spellWords
+    !text: tr('words')
+    width: 100
+    anchors.bottom: parent.bottom
+    anchors.left: prev.left
+
+
+  HorizontalScrollBar
+    id: scroll1
+    width: 100
+    anchors.left: prev.right
+    anchors.bottom: parent.bottom
+    margin-right: 2
+    margin-top: 2
+    minimum: 0
+    maximum: 100
+    step: 1
+    &disableScroll: true
+
+  Label
+    id: scroll1label
+    !text: tr('words')
+    width: 30
+    anchors.bottom: prev.bottom
+    anchors.left: prev.right
+
+  Label
+    !text: tr('MIN')
+    width: 30
+    anchors.top: parent.top
+    anchors.left: scroll1.left
+
+  HorizontalScrollBar
+    id: scroll2
+    width: 100
+    anchors.left: scroll1label.right
+    anchors.bottom: parent.bottom
+    margin-right: 2
+    margin-top: 2
+    minimum: 0
+    maximum: 100
+    step: 1
+    &disableScroll: true
+
+  Label
+    id: scroll2label
+    !text: tr('words')
+    width: 30
+    anchors.bottom: prev.bottom
+    anchors.left: prev.right
+
+  Label
+    !text: tr('MAX')
+    width: 30
+    anchors.top: parent.top
+    anchors.left: scroll2.left
+
+NSpellIcon < Panel
+  anchors.top: prev.bottom
+  anchors.left: parent.left
+  height: 36
+  width: 400
+  
+
+  CheckBox
+    id: enabled
+    anchors.left: parent.left
+    anchors.verticalCenter: parent.verticalCenter
+    width: 15
+    height: 15
+    margin-top: 2
+    margin-left: 3
+
+  Label
+    id: spellIcon
+    background-color: alpha
+    height: 36
+    width: 36
+    image-clip: 32 32 32 32
+    image-size: 32 32
+    image-offset: 2 2
+    image-source: /images/game/spells/defaultspells
+    anchors.top: parent.top
+    anchors.left: prev.right
+
+  
+  Label
+    id: spellName
+    !text: tr('name')
+    width: 100
+    anchors.top: parent.top
+    anchors.left: prev.right
+
+  Label
+    id: spellWords
+    !text: tr('words')
+    width: 100
+    anchors.bottom: parent.bottom
+    anchors.left: prev.left
+
+
+  HorizontalScrollBar
+    id: scroll1
+    width: 100
+    anchors.left: prev.right
+    anchors.bottom: parent.bottom
+    margin-right: 2
+    margin-top: 2
+    minimum: 0
+    maximum: 100
+    step: 1
+    &disableScroll: true
+
+  Label
+    id: scroll1label
+    !text: tr('words')
+    width: 30
+    anchors.bottom: prev.bottom
+    anchors.left: prev.right
+
+  Label
+    !text: tr('MIN')
+    width: 30
+    anchors.top: parent.top
+    anchors.left: scroll1.left
+
+  HorizontalScrollBar
+    id: scroll2
+    width: 100
+    anchors.left: scroll1label.right
+    anchors.bottom: parent.bottom
+    margin-right: 2
+    margin-top: 2
+    minimum: 0
+    maximum: 100
+    step: 1
+    &disableScroll: true
+
+  Label
+    id: scroll2label
+    !text: tr('words')
+    width: 30
+    anchors.bottom: prev.bottom
+    anchors.left: prev.right
+
+  Label
+    !text: tr('MAX')
+    width: 30
+    anchors.top: parent.top
+    anchors.left: scroll2.left
+
+
+  
+
+
+
+HealWindow < MainWindow
+  !text: tr('Heal')
+  size: 600 400
+  @onEscape: self:hide()
+
+
+  Panel
+    id: spellsPanel
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.top: parent.top
+    height: 200
+
+  Panel
+    id: potsPanel
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.top: prev.bottom
+    height: 200
+
+  Button
+    id: closeButton
+    !text: tr('Close')
+    font: cipsoftFont
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    size: 45 21
+    margin-top: 15
+    margin-right: 5    
+
+
+
+
+
+HPanel < Panel
+  height: 30
+  margin-top: 3
+      
+  Label
+    id: title
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.top: parent.top
+    text-align: center
+    text: Cleidan
+    
+  HorizontalScrollBar
+    id: scroll1
+    anchors.left: title.left
+    anchors.right: title.horizontalCenter
+    anchors.top: title.bottom
+    margin-right: 2
+    margin-top: 2
+    minimum: 0
+    maximum: 100
+    step: 1
+    &disableScroll: true
+    
+  HorizontalScrollBar
+    id: scroll2
+    anchors.left: title.horizontalCenter
+    anchors.right: title.right
+    anchors.top: prev.top
+    margin-left: 2
+    minimum: 0
+    maximum: 100
+    step: 1
+    &disableScroll: true
+
+
+
+
+
+
+
+
+
+
